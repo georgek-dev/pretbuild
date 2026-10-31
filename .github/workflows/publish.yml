@@ -1,0 +1,32 @@
+name: Upload release to PyPI
+
+on:
+  release:
+    types: [prereleased, published]
+    
+permissions: 
+  id-token: 
+    write
+
+jobs:
+  publish:
+    name: publish to PyPI
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/pretbuild
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.14"
+      - name: install deps
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install wheel setuptools build
+      - name: build package
+        run: |
+          python3 -m build
+      - name: publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
