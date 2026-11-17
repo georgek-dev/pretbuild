@@ -1,5 +1,6 @@
-import os
 import glob
+import os
+
 
 def search(name):
     path = os.environ.get("PATH", "").split(os.pathsep)

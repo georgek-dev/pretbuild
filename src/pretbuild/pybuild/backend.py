@@ -1,13 +1,16 @@
-import os
 import io
+import os
 import tarfile
 import zipfile
+
 try:
-    import tomllib # novm
+    import tomllib  # novm
 except ModuleNotFoundError:
     import tomli as tomllib
+
 import base64
 import hashlib
+
 
 def _metadata():
     root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))

@@ -1,8 +1,10 @@
 import subprocess
-import pretbuild.clean.main as clean
-import pretbuild.build.main as build
-import pretbuild.path
 import sys
+
+import pretbuild.build.main as build
+import pretbuild.clean.main as clean
+import pretbuild.path
+
 
 def entry(args):
     cmds = pretbuild.path.search("pret-*")

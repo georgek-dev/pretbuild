@@ -1,6 +1,7 @@
 import glob
 import os
 
+
 def clean(file):
     TOCLEAN = []
     try:

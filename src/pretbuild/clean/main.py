@@ -1,5 +1,7 @@
-import pretbuild.clean.cleaner as clr
 import sys
+
+import pretbuild.clean.cleaner as clr
+
 
 def help():
     return "cleans object and unneeded files"

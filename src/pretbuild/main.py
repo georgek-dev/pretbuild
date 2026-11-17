@@ -1,6 +1,7 @@
-import pretbuild.cli
 import argparse
 import sys
+
+import pretbuild.cli
 
 parser = argparse.ArgumentParser(
     prog=sys.argv[0],
